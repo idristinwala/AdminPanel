@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" verbose="0" name="Failed suite [Regression TestSuite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="AdminPanel.CustomListeners"/>
+  </listeners>
+  <test name="Chrome Test">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <define name="all">
+        <include name="ngdialog"/>
+        <include name="non-ngdialog"/>
+        <include name="manage"/>
+      </define> <!-- all -->
+      <run>
+        <include name="ngdialog"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="AdminPanel.OverviewTab"/>
+      <class name="AdminPanel.ManageTeamTab"/>
+    </classes>
+  </test> <!-- Chrome Test -->
+</suite> <!-- Failed suite [Regression TestSuite] -->

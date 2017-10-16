@@ -1,0 +1,35 @@
+<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> -->
+<suite name="Regression TestSuite" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="AdminPanel.CustomListeners"></listener>
+	</listeners>
+	<!-- <test name="Firefox Test"> <parameters> <parameter name="browser" value="firefox"></parameter> 
+		<parameter name="node" value="172.16.181.33"></parameter> <parameter name="node" 
+		value="172.16.138.73"></parameter> </parameters>> <groups> <define name="all"> 
+		<include name="ngdialog"></include> <include name="non-ngdialog"></include> 
+		<include name="manage"></include> </define>> <run> <include name="manage"></include> 
+		</run> </groups> <classes> <class name="AdminPanel.OverviewTab"></class> 
+		<class name="AdminPanel.ManageTeamTab"></class> </classes> </test> -->
+	<test name="Chrome Test">
+		<parameters>
+			<parameter name="browser" value="chrome"></parameter>
+			<!-- <parameter name="node" value="172.16.181.33"></parameter> <parameter 
+				name="node" value="172.16.138.73"></parameter> -->
+		</parameters>
+		
+		<groups>
+			<define name="all">
+				<include name="ngdialog"></include>
+				<include name="non-ngdialog"></include>
+				<include name="manage"></include>
+			</define>
+			<run>
+				<include name="ngdialog"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="AdminPanel.OverviewTab"></class>
+			<class name="AdminPanel.ManageTeamTab"></class>
+		</classes>
+	</test>
+</suite>
