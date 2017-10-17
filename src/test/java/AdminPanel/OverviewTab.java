@@ -1,9 +1,9 @@
 package AdminPanel;
 
-import java.io.FileInputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -23,9 +23,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+
 import page.classes.Overview;
 
 //import com.gargoylesoftware.htmlunit.javascript.host.Set;
@@ -163,7 +165,7 @@ public class OverviewTab {
 		}
 	}
 
-	@Test(groups = { "ngdialog" })
+	@Test(groups = { "non-ngdialog" })
 	public void verifyTeamname() throws InterruptedException {
 		Overview.teamNameEditButton(driver); // ------- > Page Object Modal
 		// WebElement edit =
@@ -267,24 +269,24 @@ public class OverviewTab {
 	@Test(groups = { "ngdialog" }) // , dataProvider="email ids")
 	public void zAddusers() throws InterruptedException {
 
-	/*	try {
-			FileInputStream ExcelFile = new FileInputStream(path);
-			ExcelWBook = new XSSFWorkbook(ExcelFile);
-			ExcelWSheet = ExcelWBook.getSheet(sheetName);
-
-			Cell = ExcelWSheet.getRow(0).getCell(0);
-			String cellData = Cell.getStringCellValue();*/
-			overview.clickInviteButton();
-			overview.Typeemail("micka3@sigh.info");
-			overview.clickAddemail();
-			Thread.sleep(3000);
-			overview.clickOverlay();
-			test.log(LogStatus.INFO, "Closing Add user modal");
-			Thread.sleep(2000);
-		/*} catch (Exception e) {
-			e.printStackTrace();
-		}
-*/
+		/*
+		 * try { FileInputStream ExcelFile = new FileInputStream(path);
+		 * ExcelWBook = new XSSFWorkbook(ExcelFile); ExcelWSheet =
+		 * ExcelWBook.getSheet(sheetName);
+		 * 
+		 * Cell = ExcelWSheet.getRow(0).getCell(0); String cellData =
+		 * Cell.getStringCellValue();
+		 */
+		overview.clickInviteButton();
+		overview.Typeemail("micka3@sigh.info");
+		overview.clickAddemail();
+		Thread.sleep(3000);
+		overview.clickOverlay();
+		test.log(LogStatus.INFO, "Closing Add user modal");
+		Thread.sleep(2000);
+		/*
+		 * } catch (Exception e) { e.printStackTrace(); }
+		 */
 	}
 
 	@Test(groups = { "non-ngdialog" })

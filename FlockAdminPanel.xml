@@ -24,7 +24,7 @@
 				<include name="manage"></include>
 			</define>
 			<run>
-				<include name="ngdialog"></include>
+				<include name="non-ngdialog"></include>
 			</run>
 		</groups>
 		<classes>
